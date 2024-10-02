@@ -532,3 +532,5 @@ class CodeGenCpp(CodeGen):
         self._generate_cmake()
         self._generate_cfgs(mpt)
         self._generate_monitor(mpt)
+
+        self.format_generated_code()
