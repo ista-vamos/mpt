@@ -1,0 +1,31 @@
+Event InputL, OutputL {
+  value : UInt64
+}
+
+mpt OD {
+  in t1, t2;
+  out o : Bool;
+
+  -- initial state
+  init q0;
+
+  q0 -> q0 {
+    t1: _*e1@{InputL + OutputL};
+    t2: _*e2@{InputL + OutputL};
+    cond: t1[e1] == t2[e2];
+  }
+  q0 -> q1 {
+    t1: _*e1@{OutputL + $};
+    t2: _*e2@{OutputL + $};
+    cond: t1[e1] != t2[e2];
+    out: false;
+  }
+  q0 -> q2 {
+    t1: _*e1@{InputL + $};
+    t2: _*e2@{InputL + $};
+    cond: t1[e1] != t2[e2];
+    out: true;
+  }
+}
+
+
