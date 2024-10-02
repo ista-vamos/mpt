@@ -11,7 +11,7 @@ int monitor(Inputs &inputs);
 int main(int argc, char *argv[]) {
   assert(argc == 2);
 
-  Inputs inputs;
+  Inputs inputs(argv, 0);
 
   int res = monitor(inputs);
   std::string arg(argv[1]);

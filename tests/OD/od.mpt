@@ -1,3 +1,8 @@
+Event InputL, OutputL, Write {
+  id: UInt64,
+  addr: UInt64,
+  x: UInt64
+};
 
 mpt OD {
   in t1 : [InputL, OutputL, Write], t2: [InputL, OutputL, Write];

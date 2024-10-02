@@ -9,7 +9,7 @@ foreach(file ${inputs})
 
 	add_custom_target(test-${CMAKE_MATCH_1}
 		COMMAND python  ../../mptc --reduction reflexivity --reduction symmetry --debug --exit-on-error
-                        --overwrite-default main.cpp --out-dir "/tmp/${CMAKE_MATCH_1}" od.mpt ${file} main.cpp
+                        --overwrite-file main.cpp --out-dir "/tmp/${CMAKE_MATCH_1}" od.mpt ${file} main.cpp
 		COMMAND cd "/tmp/${CMAKE_MATCH_1}/" && cmake .
 		COMMAND make -C "/tmp/${CMAKE_MATCH_1}/"
 		COMMAND cp "/tmp/${CMAKE_MATCH_1}/monitor" test-${CMAKE_MATCH_1})

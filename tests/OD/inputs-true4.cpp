@@ -54,7 +54,7 @@ Event *InputStream::getEvent() {
   return &events[pos++];
 }
 
-Inputs::Inputs() {
+Inputs::Inputs(char **, size_t) {
   size_t &returned = data<size_t>(0);
   returned = 0;
 }
