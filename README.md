@@ -161,6 +161,26 @@ to `l2`. These conditions would be evaluated in the following way:
 
 # Using the compiler
 
+## Setup
+
+First, you need to setup [vamos-common](https://github.com/ista-vamos/vamos-common).
+The easiest way to do it is to clone and setup whole [VAMOS](https://github.com/ista-vamos/vamos)
+(follow the instructions in VAMOS' README).
+
+To setup the project, run:
+```
+cmake . -Dvamos-common_DIR=<path-to-vamos-common>/cmake/vamos-common
+```
+or, alternatively, if you built VAMOS with no changes to the structure of submodules,
+you can run:
+
+```
+cmake . -Dvamos_DIR=<path-to-vamos-top-dir>
+```
+
+
+## Generating a monitor
+
 The main script is `mptc` (*MPT* *C*ompiler) that takes as input the mpt definition
 (file with the extension `.mpt`) and some other options. All options can be shown
 using the `--help` argument. The basic usage is:
