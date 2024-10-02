@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.9)
 project(mpt LANGUAGES C CXX VERSION 0.1)
 
+if (vamos_DIR AND NOT vamos-common_DIR)
+	set(vamos-common_DIR "${vamos_DIR}/vamos-common/cmake/vamos-common")
+	get_filename_component(vamos-common_DIR ${vamos-common_DIR} ABSOLUTE)
+	message(STATUS "Inferring vamos-common_DIR from vamos_DIR: ${vamos-common_DIR}")
+endif()
+
 find_package(vamos-common REQUIRED)
 find_package(vamos-sources)
 
