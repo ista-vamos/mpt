@@ -7,11 +7,9 @@
 #include <set>
 #include <vector>
 
+#include "event.h"
 #include "trace.h"
 
-#include <vamos-buffers/cpp/event.h>
-
-using vamos::Event;
 
 class Inputs;
 

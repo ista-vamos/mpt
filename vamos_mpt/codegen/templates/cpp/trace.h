@@ -4,9 +4,11 @@
 #include <cstring>
 #include <vector>
 
-#include <vamos-buffers/cpp/event.h>
+#include "event.h"
 
-using vamos::Event;
+// #include <vamos-buffers/cpp/event.h>
+// 
+// using vamos::Event;
 
 class TraceBase {
   const size_t _id;

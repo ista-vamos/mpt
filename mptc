@@ -25,10 +25,18 @@ def errmsg(msg):
 def main(args):
     ctx = None
 
+    vamos_compatible=False
+
     ### Parse the event source specification if given and generate the sources
     if args.sources_def:
+        if not vamos_compatible:
+            raise NotImplementedError("The integration with VAMOS is not working yet.")
+
         dbg("Generating event sources")
         from config import vamos_sources_PYTHONPATH
+
+        if not vamos_sources_PYTHONPATH:
+            raise RuntimeError(f"The project was not configured with vamos-sources.")
 
         sys.path.append(vamos_sources_PYTHONPATH)
         from vamos_sources.spec.parser.parser import InlineSpecParser as SrcParser
@@ -76,7 +84,7 @@ def main(args):
 
     dbg("Generating events")
     assert args.out_dir_overwrite is False
-    events_codegen = EventsCodeGen(args, ctx)
+    events_codegen = EventsCodeGen(args, ctx, vamos_compatible)
     events_codegen.generate(mpt.alphabet)
     dbg("DONE generating events")
 
@@ -130,7 +138,7 @@ def parse_arguments():
         help="Do not process pairs reflexive and symmetric pairs of  traces",
     )
     parser.add_argument(
-        "--overwrite-default",
+        "--overwrite-file",
         action="append",
         default=[],
         help="Do not generate the default version of the given file, its replacement is assumed to be "

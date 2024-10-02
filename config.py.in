@@ -1,29 +1,7 @@
 
 source_dir = "@CMAKE_CURRENT_SOURCE_DIR@"
 
-vamos_buffers_DIR         = "@vamos-buffers_DIR@"
-vamos_buffers_BINARY_DIR  = "@vamos-buffers_BINARY_DIR@"
-vamos_buffers_SOURCE_DIR  = "@vamos-buffers_SOURCE_DIR@"
-
-vamos_buffers_LIBRARIES_DIRS_core = "@vamos-buffers_LIBRARIES_DIRS_core@"
-vamos_buffers_LIBRARIES_DIRS_shmbuf = "@vamos-buffers_LIBRARIES_DIRS_shmbuf@"
-vamos_buffers_LIBRARIES_DIRS_streams = "@vamos-buffers_LIBRARIES_DIRS_streams@"
-vamos_buffers_INCLUDE_DIR = "@vamos-buffers_DIR@/../../include"
-
-vamos_buffers_BUILD_TYPE               = "@vamos-buffers_BUILD_TYPE@"
-vamos_buffers_C_COMPILER               = "@vamos-buffers_C_COMPILER@"
-
-vamos_buffers_OPTION_ENABLE_IPO        = "@vamos-buffers_OPTION_ENABLE_IPO@".upper()
-
-vamos_hyper_DIR         = "@vamos-hyper_DIR@"
-vamos_hyper_BINARY_DIR  = "@vamos-hyper_BINARY_DIR@"
-vamos_hyper_SOURCE_DIR  = "@vamos-hyper_SOURCE_DIR@"
-vamos_hyper_INCLUDE_DIR = "@vamos-hyper_DIR@/../../include"
-
-vamos_hyper_BUILD_TYPE               = "@vamos-hyper_BUILD_TYPE@"
-vamos_hyper_C_COMPILER               = "@vamos-hyper_C_COMPILER@"
-
-vamos_hyper_OPTION_ENABLE_IPO        = "@vamos-hyper_OPTION_ENABLE_IPO@".upper()
+vamos_common_PYTHONPATH  = "@vamos-common_PYTHONPATH@"
 
 vamos_sources_DIR         = "@vamos-sources_DIR@"
 vamos_sources_BINARY_DIR  = "@vamos-sources_BINARY_DIR@"
@@ -31,5 +9,17 @@ vamos_sources_SOURCE_DIR  = "@vamos-sources_SOURCE_DIR@"
 vamos_sources_PYTHONPATH  = "@vamos-sources_PYTHONPATH@"
 
 
-vamos_common_PYTHONPATH  = "@vamos-common_PYTHONPATH@"
+# vamos_buffers_DIR         = "@vamos-buffers_DIR@"
+# vamos_buffers_BINARY_DIR  = "@vamos-buffers_BINARY_DIR@"
+# vamos_buffers_SOURCE_DIR  = "@vamos-buffers_SOURCE_DIR@"
+# 
+# vamos_buffers_LIBRARIES_DIRS_core = "@vamos-buffers_LIBRARIES_DIRS_core@"
+# vamos_buffers_LIBRARIES_DIRS_shmbuf = "@vamos-buffers_LIBRARIES_DIRS_shmbuf@"
+# vamos_buffers_LIBRARIES_DIRS_streams = "@vamos-buffers_LIBRARIES_DIRS_streams@"
+# vamos_buffers_INCLUDE_DIR = "@vamos-buffers_DIR@/../../include"
+# 
+# vamos_buffers_BUILD_TYPE               = "@vamos-buffers_BUILD_TYPE@"
+# vamos_buffers_C_COMPILER               = "@vamos-buffers_C_COMPILER@"
+# 
+# vamos_buffers_OPTION_ENABLE_IPO        = "@vamos-buffers_OPTION_ENABLE_IPO@".upper()
 

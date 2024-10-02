@@ -25,7 +25,7 @@ void update_traces(Inputs &inputs, WorkbagT &workbag, TracesT &traces,
       if (stream->isDone()) {
         // std::cout << "Stream " << stream->id() << " DONE\n";
         remove_online_traces.insert(stream);
-        trace->append(TraceEvent(Event::doneKind(), trace->size()));
+        trace->append(TraceEvent(Kind::END)); //, trace->size()));
         trace->setDone();
       }
     }

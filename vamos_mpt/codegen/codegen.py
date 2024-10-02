@@ -71,23 +71,16 @@ class CodeGenCpp(CodeGen):
             "mstring.cpp",
             "subword-compare.h",
         ]
-        common_files = [
-            "cpp/event_and_id.h"
-        ]
 
         for f in files:
-            if f not in self.args.overwrite_default:
+            if f not in self.args.overwrite_file:
                 self.copy_file(f)
-
-        for f in common_files:
-            if f not in self.args.overwrite_default:
-                self.copy_common_file(f)
 
         for f in self.args.cpp_files:
             self.copy_file(f)
 
     def _generate_cmake(self):
-        from config import vamos_buffers_DIR, vamos_hyper_DIR
+        # from config import vamos_buffers_DIR
 
         build_type = self.args.build_type
         if not build_type:
@@ -97,8 +90,7 @@ class CodeGenCpp(CodeGen):
             "CMakeLists.txt.in",
             "CMakeLists.txt",
             {
-                "@vamos-buffers_DIR@": vamos_buffers_DIR,
-                "@vamos-hyper_DIR@": vamos_hyper_DIR,
+                # "@vamos-buffers_DIR@": vamos_buffers_DIR,
                 "@additional_sources@": " ".join(
                     (basename(f) for f in self.args.cpp_files + self.args.add_gen_files)
                 ),
